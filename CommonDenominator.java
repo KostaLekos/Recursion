@@ -33,11 +33,24 @@ public class CommonDenominator {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 
-		System.out.println("Please enter a fraction ('x/y' format):");
+		Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+		    System.out.println("Cleaning up...");
+		}));
+
+		System.out.println("Please enter a fraction ('x/y' format, or 'exit' or 'e' to terminate): ");
 		String frac1 = input.nextLine();
+
+		if (frac1.toLowerCase().equals("exit") || frac1.toLowerCase().equals("e")) {
+			System.exit(0);
+		}
 
 		System.out.println("\nNow enter another fraction to add to the first:");
 		String frac2 = input.nextLine();
+
+		if (frac2.toLowerCase().equals("exit") || frac2.toLowerCase().equals("e")) {
+			input.close();
+			System.exit(0);
+		}
 
 		System.out.println(frac1 + " + " + frac2 + " = " + addFraction(frac1, frac2) + "\n\n");
 
