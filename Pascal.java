@@ -31,9 +31,11 @@ public class Pascal {
 
         System.out.println("How many lines of Pascal's Triangle would you like?");
         int lineNum = Integer.valueOf(input.nextLine());
+        System.out.println();
 
         int[] line;
         for (int i = 1; i <= lineNum; i++) {
+            System.out.print(" ");
             line = genPascal(i);
 
             for (int j = 0; j < line.length; j++) {
