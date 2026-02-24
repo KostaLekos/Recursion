@@ -37,7 +37,7 @@ public class CommonDenominator {
 		    System.out.println("Cleaning up...");
 		}));
 
-		System.out.println("Please enter a fraction ('x/y' format, or 'exit' or 'e' to terminate): ");
+		System.out.println("Please enter a fraction ('x/y' format, or 'exit'/'e' to terminate): ");
 		String frac1 = input.nextLine();
 
 		if (frac1.toLowerCase().equals("exit") || frac1.toLowerCase().equals("e")) {
