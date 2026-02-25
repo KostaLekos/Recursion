@@ -35,6 +35,7 @@ public class CommonDenominator {
 
 		Runtime.getRuntime().addShutdownHook(new Thread(() -> {
 		    System.out.println("Cleaning up...");
+			input.close();
 		}));
 
 		System.out.println("Please enter a fraction ('x/y' format, or 'exit'/'e' to terminate): ");
@@ -48,7 +49,6 @@ public class CommonDenominator {
 		String frac2 = input.nextLine();
 
 		if (frac2.toLowerCase().equals("exit") || frac2.toLowerCase().equals("e")) {
-			input.close();
 			System.exit(0);
 		}
 
